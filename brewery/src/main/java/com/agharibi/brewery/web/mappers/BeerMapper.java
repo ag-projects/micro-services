@@ -4,7 +4,7 @@ import com.agharibi.brewery.domain.Beer;
 import com.agharibi.brewery.web.model.BeerDto;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(uses = {DateMapper.class})
 public interface BeerMapper {
 
     BeerDto beerToBeeDto(Beer beer);
