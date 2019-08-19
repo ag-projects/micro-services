@@ -33,7 +33,7 @@ public class BeerControllerV2 {
     @PostMapping
     public ResponseEntity<BeerDtoV2> handlePost(@Valid @RequestBody BeerDtoV2 beerDto) {
         BeerDtoV2 savedBeer = beerServiceV2.saveNewBeer(beerDto);
-        HttpHeaders headers  = new HttpHeaders();
+        HttpHeaders headers = new HttpHeaders();
 
         //TODO add hostname to url
         headers.add("Location", "/api/v1/beer/" + savedBeer.getId().toString());

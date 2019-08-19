@@ -31,7 +31,7 @@ public class CustomerController {
 
     @PostMapping
     public ResponseEntity<CustomerDto> handlePost(@Valid @RequestBody CustomerDto customerDto) {
-        CustomerDto newCustomer  = customerService.saveNewCustomer(customerDto);
+        CustomerDto newCustomer = customerService.saveNewCustomer(customerDto);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/api/v1/customer/" + newCustomer.getId().toString());
 
@@ -39,7 +39,7 @@ public class CustomerController {
     }
 
     @PutMapping({"/{id}"})
-    public ResponseEntity<CustomerDto> handleUpdate(@PathVariable("id") UUID id,@Valid @RequestBody CustomerDto customerDto) {
+    public ResponseEntity<CustomerDto> handleUpdate(@PathVariable("id") UUID id, @Valid @RequestBody CustomerDto customerDto) {
         customerService.updateCustomer(id, customerDto);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

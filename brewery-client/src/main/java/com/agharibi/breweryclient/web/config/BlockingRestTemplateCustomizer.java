@@ -25,15 +25,15 @@ public class BlockingRestTemplateCustomizer implements RestTemplateCustomizer {
         connectionManager.setDefaultMaxPerRoute(20);
 
         RequestConfig requestConfig = RequestConfig.custom()
-            .setConnectionRequestTimeout(3000)
-            .setSocketTimeout(3000)
-            .build();
+                .setConnectionRequestTimeout(3000)
+                .setSocketTimeout(3000)
+                .build();
 
         CloseableHttpClient httpClient = HttpClients.custom()
-            .setConnectionManager(connectionManager)
-            .setKeepAliveStrategy(new DefaultConnectionKeepAliveStrategy())
-            .setDefaultRequestConfig(requestConfig)
-            .build();
+                .setConnectionManager(connectionManager)
+                .setKeepAliveStrategy(new DefaultConnectionKeepAliveStrategy())
+                .setDefaultRequestConfig(requestConfig)
+                .build();
 
         return new HttpComponentsClientHttpRequestFactory(httpClient);
     }

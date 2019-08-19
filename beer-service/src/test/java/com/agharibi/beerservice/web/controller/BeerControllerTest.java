@@ -35,7 +35,7 @@ import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-@ExtendWith(RestDocumentationExtension.class )
+@ExtendWith(RestDocumentationExtension.class)
 @AutoConfigureRestDocs(uriScheme = "https", uriHost = "dev.com.agharibi", uriPort = 80)
 @WebMvcTest(BeerController.class)
 @ComponentScan(basePackages = "com.agharibi.beerservice.web.mappers")
@@ -60,7 +60,7 @@ class BeerControllerTest {
                 .andExpect(status().isOk())
                 .andDo(document("v1/beer-get", pathParameters(
                         parameterWithName("beerId").description("UUID of desired beer to get")),
-                    requestParameters(parameterWithName("isCold").description("Is beer cold query param")),
+                        requestParameters(parameterWithName("isCold").description("Is beer cold query param")),
                         responseFields(
                                 fieldWithPath("id").description("Id of Beer"),
                                 fieldWithPath("version").description("Version number"),
@@ -82,9 +82,9 @@ class BeerControllerTest {
         ConstraintFields fields = new ConstraintFields(BeerDto.class);
 
         mockMvc.perform(post("/api/v1/beer/")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(beerDtoJson))
-                        .andExpect(status().isCreated())
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(beerDtoJson))
+                .andExpect(status().isCreated())
                 .andDo(document("v1/beer-post",
                         requestFields(
                                 fields.withPath("id").ignored(),
@@ -106,9 +106,9 @@ class BeerControllerTest {
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID().toString())
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(beerDtoJson))
-                        .andExpect(status().isNoContent());
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(beerDtoJson))
+                .andExpect(status().isNoContent());
     }
 
     BeerDto getValidBeerDto() {
