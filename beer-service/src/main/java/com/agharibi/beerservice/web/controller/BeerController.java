@@ -3,8 +3,6 @@ package com.agharibi.beerservice.web.controller;
 import com.agharibi.beerservice.repositories.BeerRepository;
 import com.agharibi.beerservice.web.mappers.BeerMapper;
 import com.agharibi.beerservice.web.model.BeerDto;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
