@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @WebMvcTest(BeerController.class)
-@ComponentScan(basePackages = "com.agharibi.beerservice.web.mappers.BeerMapper")
+@ComponentScan(basePackages = "com.agharibi.beerservice.web.mappers")
 class BeerControllerTest {
 
     @Autowired
