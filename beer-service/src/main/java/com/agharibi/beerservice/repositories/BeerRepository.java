@@ -9,9 +9,9 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.UUID;
 
 public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
-    Page<Beer> findAllByBeerName(String beerName, Pageable pageable);
-    Page<Beer> finalAllByBeerStyle(BeerStyleEnum beerStyle, Pageable pageable);
-    Page<Beer> findAllBeerNameANdBeerStyle(String beerName, BeerStyleEnum beerStyle, Pageable pageable);
 
+    Page<Beer> findAllByBeerName(String beerName, Pageable pageable);
+    Page<Beer> findAllByBeerStyle(BeerStyleEnum beerStyle, Pageable pageable);
+    Page<Beer> findAllByBeerNameAndBeerStyle(String beerName, BeerStyleEnum beerStyle, Pageable pageable);
 
 }

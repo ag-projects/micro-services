@@ -54,11 +54,11 @@ public class BeerServiceImpl implements BeerService {
         Page<Beer> beerPage;
 
         if(!StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle)) {
-             beerPage = beerRepository.findAllBeerNameANdBeerStyle(beerName, beerStyle, pageRequest);
+             beerPage = beerRepository.findAllByBeerNameAndBeerStyle(beerName, beerStyle, pageRequest);
         } else if(!StringUtils.isEmpty(beerName) && StringUtils.isEmpty(beerStyle)) {
             beerPage = beerRepository.findAllByBeerName(beerName, pageRequest);
         } else if(StringUtils.isEmpty(beerName) && !StringUtils.isEmpty(beerStyle)) {
-            beerPage = beerRepository.finalAllByBeerStyle(beerStyle, pageRequest);
+            beerPage = beerRepository.findAllByBeerStyle(beerStyle, pageRequest);
         } else {
             beerPage = beerRepository.findAll(pageRequest);
         }
