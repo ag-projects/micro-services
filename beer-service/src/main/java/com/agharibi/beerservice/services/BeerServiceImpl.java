@@ -7,6 +7,7 @@ import com.agharibi.beerservice.web.model.BeerDto;
 import com.agharibi.beerservice.web.model.BeerPageList;
 import com.agharibi.beerservice.web.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class BeerServiceImpl implements BeerService {
     private final BeerMapper beerMapper;
     private final BeerRepository beerRepository;
 
+    @Cacheable(cacheNames = "beerCache", key = "#beerId", condition = "#showInventoryOnHand == false ")
     @Override
     public BeerDto getById(UUID beerId, boolean showInventoryOnHand) {
 
@@ -54,6 +56,8 @@ public class BeerServiceImpl implements BeerService {
         return beerMapper.beerToBeerDto(beerRepository.save(beer));
     }
 
+
+    @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false")
     @Override
     public BeerPageList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, boolean showInventoryOnHand) {
         BeerPageList beerPageList;
