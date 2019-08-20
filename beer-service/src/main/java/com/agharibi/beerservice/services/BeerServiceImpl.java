@@ -7,7 +7,6 @@ import com.agharibi.beerservice.web.model.BeerDto;
 import com.agharibi.beerservice.web.model.BeerPageList;
 import com.agharibi.beerservice.web.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
