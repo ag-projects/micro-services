@@ -6,7 +6,6 @@
         <groupId>com.agharibi</groupId>
         <artifactId>brewery-bom</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../brewery-bom/pom.xml</relativePath>
     </parent>
 
     <groupId>com.agharibi</groupId>

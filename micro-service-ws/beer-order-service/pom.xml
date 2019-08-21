@@ -6,14 +6,13 @@
         <groupId>com.agharibi</groupId>
         <artifactId>brewery-bom</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../brewery-bom/pom.xml</relativePath>
     </parent>
-
     <groupId>com.agharibi</groupId>
-    <artifactId>beer-inventory-service</artifactId>
+    <artifactId>beer-order-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>beer-inventory-service</name>
+    <name>beer-order-service</name>
     <description>Demo project for Spring Boot</description>
+
 
     <dependencies>
         <dependency>
