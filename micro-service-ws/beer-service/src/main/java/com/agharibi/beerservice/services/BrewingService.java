@@ -36,7 +36,7 @@ public class BrewingService {
             log.debug("Inventory is -> " + inventoryqty);
 
             if (beer.getMinOnHand() >= inventoryqty) {
-                jmsTemplate.convertAndSend(BREWING_REQUEST_QUEUE, new BrewBeerEvent(beerMapper.beerToBeerDto(beer));
+                jmsTemplate.convertAndSend(BREWING_REQUEST_QUEUE, new BrewBeerEvent(beerMapper.beerToBeerDto(beer)));
             }
         });
     }
