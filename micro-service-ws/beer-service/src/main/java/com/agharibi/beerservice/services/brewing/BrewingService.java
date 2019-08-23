@@ -1,4 +1,4 @@
-package com.agharibi.beerservice.services;
+package com.agharibi.beerservice.services.brewing;
 
 
 import com.agharibi.beerservice.domain.Beer;
