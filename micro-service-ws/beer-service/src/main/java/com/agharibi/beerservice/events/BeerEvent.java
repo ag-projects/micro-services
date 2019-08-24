@@ -8,11 +8,12 @@ import java.io.Serializable;
 @Data
 //@RequiredArgsConstructor
 @Builder
+@NoArgsConstructor
 public class BeerEvent implements Serializable {
 
     private static final long serialVersionUID = -8116783419776981931L;
 
-    private final BeerDto beerDto;
+    private  BeerDto beerDto;
 
     public BeerEvent(BeerDto beerDto) {
         this.beerDto = beerDto;

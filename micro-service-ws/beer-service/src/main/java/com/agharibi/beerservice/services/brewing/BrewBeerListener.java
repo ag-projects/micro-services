@@ -13,13 +13,14 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
-import static com.agharibi.beerservice.config.JmsConfig.NEW_INVENTORY_QUEUE;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class BrewBeerListener {
 
+
+    public static final String BREWING_REQUEST_QUEUE = "brewing-request";
+    public static final String NEW_INVENTORY_QUEUE = "new-inventory";
     private final BeerRepository beerRepository;
     private final JmsTemplate jmsTemplate;
 
